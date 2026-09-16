@@ -1,0 +1,7 @@
+HTTP/1.1 206 Partial Content
+Content-Type: text/html; charset=utf-8
+Content-Length: 50082
+Content-Range: bytes 100-50181/50182
+Accept-Ranges: bytes
+Connection: keep-alive
+
