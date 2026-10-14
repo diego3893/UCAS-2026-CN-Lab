@@ -1,0 +1,16 @@
+{
+  "mode": "mitigate",
+  "algo": "red",
+  "duration_s": 60,
+  "start_time": 1791507857.9031954,
+  "kernel": "6.6.87.2-microsoft-standard-WSL2",
+  "congestion_control": "reno",
+  "bandwidth_mbps": [
+    100,
+    10,
+    1,
+    50,
+    1,
+    100
+  ]
+}

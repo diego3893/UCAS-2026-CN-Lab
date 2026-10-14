@@ -1,0 +1,8 @@
+{
+  "mode": "reproduce",
+  "maxq": 20,
+  "duration_s": 6,
+  "start_time": 1791507470.9853687,
+  "kernel": "6.6.87.2-microsoft-standard-WSL2",
+  "congestion_control": "reno"
+}
