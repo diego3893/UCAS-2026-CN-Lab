@@ -1,0 +1,20 @@
+gcc -c -g -Wall -Wno-unused-variable -Wno-unused-function -Iinclude main.c -o main.o
+In file included from include/tcp_sock.h:6,
+                 from main.c:7:
+include/tcp.h: In function ‘tcp_checksum’:
+include/tcp.h:86:9: warning: converting a packed ‘struct tcphdr’ pointer (alignment 1) to a ‘u16’ {aka ‘short unsigned int’} pointer (alignment 2) may result in an unaligned pointer value [-Waddress-of-packed-member]
+   86 |         u16 cksum = checksum((u16 *)tcp, (int)tcp_len, sum);
+      |         ^~~
+include/tcp.h:16:8: note: defined here
+   16 | struct tcphdr {
+      |        ^~~~~~
+gcc -c -g -Wall -Wno-unused-variable -Wno-unused-function -Iinclude tcp_sock.c -o tcp_sock.o
+In file included from tcp_sock.c:2:
+include/tcp.h: In function ‘tcp_checksum’:
+include/tcp.h:86:9: warning: converting a packed ‘struct tcphdr’ pointer (alignment 1) to a ‘u16’ {aka ‘short unsigned int’} pointer (alignment 2) may result in an unaligned pointer value [-Waddress-of-packed-member]
+   86 |         u16 cksum = checksum((u16 *)tcp, (int)tcp_len, sum);
+      |         ^~~
+include/tcp.h:16:8: note: defined here
+   16 | struct tcphdr {
+      |        ^~~~~~
+gcc -L. ip.o main.o tcp.o tcp_apps.o tcp_in.o tcp_out.o tcp_sock.o tcp_timer.o arp.o arpcache.o device_internal.o icmp.o ip_base.o rtable.o rtable_internal.o -o tcp_stack -lpthread 

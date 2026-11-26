@@ -1,0 +1,10 @@
+gcc -c -g -Wall -Wno-unused-variable -Wno-unused-function -Iinclude mospf_daemon.c -o mospf_daemon.o
+In file included from mospf_daemon.c:2:
+include/mospf_proto.h: In function ‘mospf_checksum’:
+include/mospf_proto.h:59:9: warning: converting a packed ‘struct mospf_hdr’ pointer (alignment 1) to a ‘u16’ {aka ‘short unsigned int’} pointer (alignment 2) may result in an unaligned pointer value [-Waddress-of-packed-member]
+   59 |         u16 sum = checksum((u16 *)mospf, ntohs(mospf->len), 0);
+      |         ^~~
+include/mospf_proto.h:22:8: note: defined here
+   22 | struct mospf_hdr {
+      |        ^~~~~~~~~
+gcc -L. ip.o main.o mospf_database.o mospf_daemon.o mospf_proto.o arp.o arpcache.o device_internal.o icmp.o ip_base.o rtable.o rtable_internal.o -o mospfd -lpthread 

@@ -1,0 +1,66 @@
+[
+  {
+    "name": "snat_course_page_0",
+    "passed": true
+  },
+  {
+    "name": "snat_course_page_1",
+    "passed": true
+  },
+  {
+    "name": "snat_binary_0",
+    "passed": true
+  },
+  {
+    "name": "snat_binary_1",
+    "passed": true
+  },
+  {
+    "name": "snat_nat_stdout_empty",
+    "passed": true
+  },
+  {
+    "name": "snat_nat_alive",
+    "passed": true
+  },
+  {
+    "name": "dnat_course_page_0",
+    "passed": true
+  },
+  {
+    "name": "dnat_course_page_1",
+    "passed": true
+  },
+  {
+    "name": "dnat_binary_0",
+    "passed": true
+  },
+  {
+    "name": "dnat_binary_1",
+    "passed": true
+  },
+  {
+    "name": "dnat_nat_stdout_empty",
+    "passed": true
+  },
+  {
+    "name": "dnat_nat_alive",
+    "passed": true
+  },
+  {
+    "name": "chain_course_page_0",
+    "passed": true
+  },
+  {
+    "name": "chain_binary_0",
+    "passed": true
+  },
+  {
+    "name": "chain_nat_stdout_empty",
+    "passed": true
+  },
+  {
+    "name": "chain_nat_alive",
+    "passed": true
+  }
+]

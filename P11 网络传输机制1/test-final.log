@@ -1,0 +1,31 @@
+cc h1$ /mnt/c/Users/30130/Desktop/CN_Lab/P11 网络传输机制1/tcp_stack/tcp_stack server 10001
+cc h2$ /mnt/c/Users/30130/Desktop/CN_Lab/P11 网络传输机制1/tcp_stack/tcp_stack client 10.0.0.1 10001
+PASS cc: handshake, two FINs/ACKs, no RST, checksums, lifecycle, empty C stdout
+  {'src': '10.0.0.2', 'sport': 12345, 'dport': 10001, 'seq': 2054306056, 'ack': 0, 'flags': 2}
+  {'src': '10.0.0.1', 'sport': 10001, 'dport': 12345, 'seq': 835250810, 'ack': 2054306057, 'flags': 18}
+  {'src': '10.0.0.2', 'sport': 12345, 'dport': 10001, 'seq': 2054306057, 'ack': 835250811, 'flags': 16}
+  {'src': '10.0.0.2', 'sport': 12345, 'dport': 10001, 'seq': 2054306057, 'ack': 835250811, 'flags': 17}
+  {'src': '10.0.0.1', 'sport': 10001, 'dport': 12345, 'seq': 835250811, 'ack': 2054306058, 'flags': 16}
+  {'src': '10.0.0.1', 'sport': 10001, 'dport': 12345, 'seq': 835250811, 'ack': 2054306058, 'flags': 17}
+  {'src': '10.0.0.2', 'sport': 12345, 'dport': 10001, 'seq': 2054306058, 'ack': 835250812, 'flags': 16}
+cp h1$ /mnt/c/Users/30130/Desktop/CN_Lab/P11 网络传输机制1/tcp_stack/tcp_stack server 10001
+cp h2$ python3 /mnt/c/Users/30130/Desktop/CN_Lab/P11 网络传输机制1/tcp_stack/tcp_stack_conn.py client 10.0.0.1 10001
+PASS cp: handshake, two FINs/ACKs, no RST, checksums, lifecycle, empty C stdout
+  {'src': '10.0.0.2', 'sport': 58270, 'dport': 10001, 'seq': 2051143725, 'ack': 0, 'flags': 2}
+  {'src': '10.0.0.1', 'sport': 10001, 'dport': 58270, 'seq': 2142871669, 'ack': 2051143726, 'flags': 18}
+  {'src': '10.0.0.2', 'sport': 58270, 'dport': 10001, 'seq': 2051143726, 'ack': 2142871670, 'flags': 16}
+  {'src': '10.0.0.2', 'sport': 58270, 'dport': 10001, 'seq': 2051143726, 'ack': 2142871670, 'flags': 17}
+  {'src': '10.0.0.1', 'sport': 10001, 'dport': 58270, 'seq': 2142871670, 'ack': 2051143727, 'flags': 16}
+  {'src': '10.0.0.1', 'sport': 10001, 'dport': 58270, 'seq': 2142871670, 'ack': 2051143727, 'flags': 17}
+  {'src': '10.0.0.2', 'sport': 58270, 'dport': 10001, 'seq': 2051143727, 'ack': 2142871671, 'flags': 16}
+pc h1$ python3 /mnt/c/Users/30130/Desktop/CN_Lab/P11 网络传输机制1/tcp_stack/tcp_stack_conn.py server 10001
+pc h2$ /mnt/c/Users/30130/Desktop/CN_Lab/P11 网络传输机制1/tcp_stack/tcp_stack client 10.0.0.1 10001
+PASS pc: handshake, two FINs/ACKs, no RST, checksums, lifecycle, empty C stdout
+  {'src': '10.0.0.2', 'sport': 12345, 'dport': 10001, 'seq': 948664615, 'ack': 0, 'flags': 2}
+  {'src': '10.0.0.1', 'sport': 10001, 'dport': 12345, 'seq': 907328531, 'ack': 948664616, 'flags': 18}
+  {'src': '10.0.0.2', 'sport': 12345, 'dport': 10001, 'seq': 948664616, 'ack': 907328532, 'flags': 16}
+  {'src': '10.0.0.2', 'sport': 12345, 'dport': 10001, 'seq': 948664616, 'ack': 907328532, 'flags': 17}
+  {'src': '10.0.0.1', 'sport': 10001, 'dport': 12345, 'seq': 907328532, 'ack': 948664617, 'flags': 16}
+  {'src': '10.0.0.1', 'sport': 10001, 'dport': 12345, 'seq': 907328532, 'ack': 948664617, 'flags': 17}
+  {'src': '10.0.0.2', 'sport': 12345, 'dport': 10001, 'seq': 948664617, 'ack': 907328533, 'flags': 16}
+3/3 scenarios passed

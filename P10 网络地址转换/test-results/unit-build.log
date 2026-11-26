@@ -1,0 +1,25 @@
+In file included from ../tests/../nat/nat.c:3,
+                 from ../tests/nat_unit.c:2:
+include/icmp.h: In function ‘icmp_checksum’:
+include/icmp.h:49:9: warning: converting a packed ‘struct icmphdr’ pointer (alignment 1) to a ‘u16’ {aka ‘short unsigned int’} pointer (alignment 2) may result in an unaligned pointer value [-Waddress-of-packed-member]
+   49 |         u16 sum = checksum((u16 *)icmp, len, 0);
+      |         ^~~
+include/icmp.h:8:8: note: defined here
+    8 | struct icmphdr {
+      |        ^~~~~~~
+In file included from ../tests/../nat/nat.c:4:
+include/tcp.h: In function ‘tcp_checksum’:
+include/tcp.h:83:9: warning: converting a packed ‘struct tcphdr’ pointer (alignment 1) to a ‘u16’ {aka ‘short unsigned int’} pointer (alignment 2) may result in an unaligned pointer value [-Waddress-of-packed-member]
+   83 |         u16 cksum = checksum((u16 *)tcp, (int)tcp_len, sum);
+      |         ^~~
+include/tcp.h:11:8: note: defined here
+   11 | struct tcphdr {
+      |        ^~~~~~
+In file included from ../tests/../nat/nat.c:6:
+include/log.h: At top level:
+include/log.h:14:20: warning: ‘log_level_str’ defined but not used [-Wunused-variable]
+   14 | static const char *log_level_str[] = { "DEBUG", "INFO", "WARNING", "ERROR" };
+      |                    ^~~~~~~~~~~~~
+include/log.h:12:23: warning: ‘this_log_level’ defined but not used [-Wunused-variable]
+   12 | static enum log_level this_log_level = DEBUG;
+      |                       ^~~~~~~~~~~~~~

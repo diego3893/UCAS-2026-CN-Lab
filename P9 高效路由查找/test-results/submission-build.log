@@ -1,0 +1,3 @@
+make: Entering directory '/mnt/c/Users/30130/Desktop/CN_Lab/P9 高效路由查找/test-results/submission-build'
+gcc -Wall -g tree.c util.c main.c -o ip_trie_tree -I./include
+make: Leaving directory '/mnt/c/Users/30130/Desktop/CN_Lab/P9 高效路由查找/test-results/submission-build'

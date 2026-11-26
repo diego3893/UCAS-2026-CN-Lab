@@ -1,0 +1,4 @@
+PASS: SNAT, reverse mapping, SYN retransmission, client/remote tuple isolation, TTL
+PASS: invalid inbound, port exhaustion, RST release, 60-second timeout
+PASS: FIN/ACK close and sequence wraparound
+PASS: DNAT rule, reverse source port, reserved service port retained

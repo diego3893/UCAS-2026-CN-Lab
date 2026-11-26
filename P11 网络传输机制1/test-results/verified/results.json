@@ -1,0 +1,17 @@
+{
+  "cc": {
+    "passed": true,
+    "tcp_records": 7,
+    "fins": 2
+  },
+  "cp": {
+    "passed": true,
+    "tcp_records": 7,
+    "fins": 2
+  },
+  "pc": {
+    "passed": true,
+    "tcp_records": 7,
+    "fins": 2
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "rounds": [
+    {
+      "run": 1,
+      "basic_us": 17653,
+      "advanced_us": 1621,
+      "basic_ns": 176.53,
+      "advanced_ns": 16.209999999999997,
+      "speedup": 10.890191239975325
+    },
+    {
+      "run": 2,
+      "basic_us": 16134,
+      "advanced_us": 1574,
+      "basic_ns": 161.34,
+      "advanced_ns": 15.74,
+      "speedup": 10.250317662007625
+    },
+    {
+      "run": 3,
+      "basic_us": 16100,
+      "advanced_us": 1317,
+      "basic_ns": 161.0,
+      "advanced_ns": 13.17,
+      "speedup": 12.224753227031131
+    },
+    {
+      "run": 4,
+      "basic_us": 16058,
+      "advanced_us": 1394,
+      "basic_ns": 160.58,
+      "advanced_ns": 13.94,
+      "speedup": 11.519368723098996
+    },
+    {
+      "run": 5,
+      "basic_us": 15787,
+      "advanced_us": 1826,
+      "basic_ns": 157.87,
+      "advanced_ns": 18.259999999999998,
+      "speedup": 8.645673603504928
+    }
+  ],
+  "basic_median_us": 16100,
+  "advanced_median_us": 1574,
+  "min_speedup": 8.645673603504928,
+  "median_speedup": 10.2287166454892
+}

@@ -1,0 +1,73 @@
+gcc -c -g -Wall -Wno-unused-variable -Wno-unused-function -Iinclude ip.c -o ip.o
+In file included from ip.c:2:
+include/icmp.h: In function ‘icmp_checksum’:
+include/icmp.h:49:9: warning: converting a packed ‘struct icmphdr’ pointer (alignment 1) to a ‘u16’ {aka ‘short unsigned int’} pointer (alignment 2) may result in an unaligned pointer value [-Waddress-of-packed-member]
+   49 |         u16 sum = checksum((u16 *)icmp, len, 0);
+      |         ^~~
+include/icmp.h:8:8: note: defined here
+    8 | struct icmphdr {
+      |        ^~~~~~~
+gcc -c -g -Wall -Wno-unused-variable -Wno-unused-function -Iinclude main.c -o main.o
+gcc -c -g -Wall -Wno-unused-variable -Wno-unused-function -Iinclude nat.c -o nat.o
+In file included from nat.c:3:
+include/icmp.h: In function ‘icmp_checksum’:
+include/icmp.h:49:9: warning: converting a packed ‘struct icmphdr’ pointer (alignment 1) to a ‘u16’ {aka ‘short unsigned int’} pointer (alignment 2) may result in an unaligned pointer value [-Waddress-of-packed-member]
+   49 |         u16 sum = checksum((u16 *)icmp, len, 0);
+      |         ^~~
+include/icmp.h:8:8: note: defined here
+    8 | struct icmphdr {
+      |        ^~~~~~~
+In file included from nat.c:4:
+include/tcp.h: In function ‘tcp_checksum’:
+include/tcp.h:83:9: warning: converting a packed ‘struct tcphdr’ pointer (alignment 1) to a ‘u16’ {aka ‘short unsigned int’} pointer (alignment 2) may result in an unaligned pointer value [-Waddress-of-packed-member]
+   83 |         u16 cksum = checksum((u16 *)tcp, (int)tcp_len, sum);
+      |         ^~~
+include/tcp.h:11:8: note: defined here
+   11 | struct tcphdr {
+      |        ^~~~~~
+gcc -c -g -Wall -Wno-unused-variable -Wno-unused-function -Iinclude arp.c -o arp.o
+gcc -c -g -Wall -Wno-unused-variable -Wno-unused-function -Iinclude arpcache.c -o arpcache.o
+In file included from arpcache.c:4:
+include/icmp.h: In function ‘icmp_checksum’:
+include/icmp.h:49:9: warning: converting a packed ‘struct icmphdr’ pointer (alignment 1) to a ‘u16’ {aka ‘short unsigned int’} pointer (alignment 2) may result in an unaligned pointer value [-Waddress-of-packed-member]
+   49 |         u16 sum = checksum((u16 *)icmp, len, 0);
+      |         ^~~
+include/icmp.h:8:8: note: defined here
+    8 | struct icmphdr {
+      |        ^~~~~~~
+arpcache.c: At top level:
+arpcache.c:61:33: warning: argument 2 of type ‘u8[6]’ {aka ‘unsigned char[6]’} with mismatched bound [-Warray-parameter=]
+   61 | int arpcache_lookup(u32 ip4, u8 mac[ETH_ALEN]){
+      |                              ~~~^~~~~~~~~~~~~
+In file included from arpcache.c:1:
+include/arpcache.h:51:33: note: previously declared as ‘u8[]’ {aka ‘unsigned char[]’}
+   51 | int arpcache_lookup(u32 ip4, u8 mac[]);
+      |                              ~~~^~~~~
+arpcache.c:144:34: warning: argument 2 of type ‘u8[6]’ {aka ‘unsigned char[6]’} with mismatched bound [-Warray-parameter=]
+  144 | void arpcache_insert(u32 ip4, u8 mac[ETH_ALEN]){
+      |                               ~~~^~~~~~~~~~~~~
+include/arpcache.h:52:34: note: previously declared as ‘u8[]’ {aka ‘unsigned char[]’}
+   52 | void arpcache_insert(u32 ip4, u8 mac[]);
+      |                               ~~~^~~~~
+gcc -c -g -Wall -Wno-unused-variable -Wno-unused-function -Iinclude device_internal.c -o device_internal.o
+gcc -c -g -Wall -Wno-unused-variable -Wno-unused-function -Iinclude icmp.c -o icmp.o
+In file included from icmp.c:1:
+include/icmp.h: In function ‘icmp_checksum’:
+include/icmp.h:49:9: warning: converting a packed ‘struct icmphdr’ pointer (alignment 1) to a ‘u16’ {aka ‘short unsigned int’} pointer (alignment 2) may result in an unaligned pointer value [-Waddress-of-packed-member]
+   49 |         u16 sum = checksum((u16 *)icmp, len, 0);
+      |         ^~~
+include/icmp.h:8:8: note: defined here
+    8 | struct icmphdr {
+      |        ^~~~~~~
+gcc -c -g -Wall -Wno-unused-variable -Wno-unused-function -Iinclude ip_base.c -o ip_base.o
+In file included from ip_base.c:2:
+include/icmp.h: In function ‘icmp_checksum’:
+include/icmp.h:49:9: warning: converting a packed ‘struct icmphdr’ pointer (alignment 1) to a ‘u16’ {aka ‘short unsigned int’} pointer (alignment 2) may result in an unaligned pointer value [-Waddress-of-packed-member]
+   49 |         u16 sum = checksum((u16 *)icmp, len, 0);
+      |         ^~~
+include/icmp.h:8:8: note: defined here
+    8 | struct icmphdr {
+      |        ^~~~~~~
+gcc -c -g -Wall -Wno-unused-variable -Wno-unused-function -Iinclude rtable.c -o rtable.o
+gcc -c -g -Wall -Wno-unused-variable -Wno-unused-function -Iinclude rtable_internal.c -o rtable_internal.o
+gcc -L. ip.o main.o nat.o arp.o arpcache.o device_internal.o icmp.o ip_base.o rtable.o rtable_internal.o -o nat -lpthread 

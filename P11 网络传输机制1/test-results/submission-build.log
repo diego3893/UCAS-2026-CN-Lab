@@ -1,0 +1,150 @@
+gcc -c -g -Wall -Wno-unused-variable -Wno-unused-function -Iinclude ip.c -o ip.o
+In file included from ip.c:2:
+include/icmp.h: In function ‘icmp_checksum’:
+include/icmp.h:49:9: warning: converting a packed ‘struct icmphdr’ pointer (alignment 1) to a ‘u16’ {aka ‘short unsigned int’} pointer (alignment 2) may result in an unaligned pointer value [-Waddress-of-packed-member]
+   49 |         u16 sum = checksum((u16 *)icmp, len, 0);
+      |         ^~~
+include/icmp.h:8:8: note: defined here
+    8 | struct icmphdr {
+      |        ^~~~~~~
+In file included from ip.c:6:
+include/tcp.h: In function ‘tcp_checksum’:
+include/tcp.h:86:9: warning: converting a packed ‘struct tcphdr’ pointer (alignment 1) to a ‘u16’ {aka ‘short unsigned int’} pointer (alignment 2) may result in an unaligned pointer value [-Waddress-of-packed-member]
+   86 |         u16 cksum = checksum((u16 *)tcp, (int)tcp_len, sum);
+      |         ^~~
+include/tcp.h:16:8: note: defined here
+   16 | struct tcphdr {
+      |        ^~~~~~
+gcc -c -g -Wall -Wno-unused-variable -Wno-unused-function -Iinclude main.c -o main.o
+In file included from include/tcp_sock.h:6,
+                 from main.c:7:
+include/tcp.h: In function ‘tcp_checksum’:
+include/tcp.h:86:9: warning: converting a packed ‘struct tcphdr’ pointer (alignment 1) to a ‘u16’ {aka ‘short unsigned int’} pointer (alignment 2) may result in an unaligned pointer value [-Waddress-of-packed-member]
+   86 |         u16 cksum = checksum((u16 *)tcp, (int)tcp_len, sum);
+      |         ^~~
+include/tcp.h:16:8: note: defined here
+   16 | struct tcphdr {
+      |        ^~~~~~
+gcc -c -g -Wall -Wno-unused-variable -Wno-unused-function -Iinclude tcp.c -o tcp.o
+In file included from tcp.c:2:
+include/tcp.h: In function ‘tcp_checksum’:
+include/tcp.h:86:9: warning: converting a packed ‘struct tcphdr’ pointer (alignment 1) to a ‘u16’ {aka ‘short unsigned int’} pointer (alignment 2) may result in an unaligned pointer value [-Waddress-of-packed-member]
+   86 |         u16 cksum = checksum((u16 *)tcp, (int)tcp_len, sum);
+      |         ^~~
+include/tcp.h:16:8: note: defined here
+   16 | struct tcphdr {
+      |        ^~~~~~
+tcp.c: At top level:
+tcp.c:32:43: warning: argument 2 of type ‘char[32]’ with mismatched bound [-Warray-parameter=]
+   32 | void tcp_copy_flags_to_str(u8 flags, char buf[32])
+      |                                      ~~~~~^~~~~~~
+include/tcp.h:99:43: note: previously declared as ‘char[]’
+   99 | void tcp_copy_flags_to_str(u8 flags, char buf[]);
+      |                                      ~~~~~^~~~~
+gcc -c -g -Wall -Wno-unused-variable -Wno-unused-function -Iinclude tcp_apps.c -o tcp_apps.o
+In file included from include/tcp_sock.h:6,
+                 from tcp_apps.c:1:
+include/tcp.h: In function ‘tcp_checksum’:
+include/tcp.h:86:9: warning: converting a packed ‘struct tcphdr’ pointer (alignment 1) to a ‘u16’ {aka ‘short unsigned int’} pointer (alignment 2) may result in an unaligned pointer value [-Waddress-of-packed-member]
+   86 |         u16 cksum = checksum((u16 *)tcp, (int)tcp_len, sum);
+      |         ^~~
+include/tcp.h:16:8: note: defined here
+   16 | struct tcphdr {
+      |        ^~~~~~
+gcc -c -g -Wall -Wno-unused-variable -Wno-unused-function -Iinclude tcp_in.c -o tcp_in.o
+In file included from tcp_in.c:1:
+include/tcp.h: In function ‘tcp_checksum’:
+include/tcp.h:86:9: warning: converting a packed ‘struct tcphdr’ pointer (alignment 1) to a ‘u16’ {aka ‘short unsigned int’} pointer (alignment 2) may result in an unaligned pointer value [-Waddress-of-packed-member]
+   86 |         u16 cksum = checksum((u16 *)tcp, (int)tcp_len, sum);
+      |         ^~~
+include/tcp.h:16:8: note: defined here
+   16 | struct tcphdr {
+      |        ^~~~~~
+gcc -c -g -Wall -Wno-unused-variable -Wno-unused-function -Iinclude tcp_out.c -o tcp_out.o
+In file included from tcp_out.c:1:
+include/tcp.h: In function ‘tcp_checksum’:
+include/tcp.h:86:9: warning: converting a packed ‘struct tcphdr’ pointer (alignment 1) to a ‘u16’ {aka ‘short unsigned int’} pointer (alignment 2) may result in an unaligned pointer value [-Waddress-of-packed-member]
+   86 |         u16 cksum = checksum((u16 *)tcp, (int)tcp_len, sum);
+      |         ^~~
+include/tcp.h:16:8: note: defined here
+   16 | struct tcphdr {
+      |        ^~~~~~
+tcp_out.c: In function ‘tcp_send_control_packet’:
+tcp_out.c:75:28: warning: ‘packet’ may be used uninitialized [-Wmaybe-uninitialized]
+   75 |         struct iphdr *ip = packet_to_ip_hdr(packet);
+      |                            ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from include/tcp.h:5:
+include/ip.h:84:29: note: by argument 1 of type ‘const char *’ to ‘packet_to_ip_hdr’ declared here
+   84 | static inline struct iphdr *packet_to_ip_hdr(const char *packet)
+      |                             ^~~~~~~~~~~~~~~~
+tcp_out.c: In function ‘tcp_send_reset’:
+tcp_out.c:105:28: warning: ‘packet’ may be used uninitialized [-Wmaybe-uninitialized]
+  105 |         struct iphdr *ip = packet_to_ip_hdr(packet);
+      |                            ^~~~~~~~~~~~~~~~~~~~~~~~
+include/ip.h:84:29: note: by argument 1 of type ‘const char *’ to ‘packet_to_ip_hdr’ declared here
+   84 | static inline struct iphdr *packet_to_ip_hdr(const char *packet)
+      |                             ^~~~~~~~~~~~~~~~
+gcc -c -g -Wall -Wno-unused-variable -Wno-unused-function -Iinclude tcp_sock.c -o tcp_sock.o
+In file included from tcp_sock.c:2:
+include/tcp.h: In function ‘tcp_checksum’:
+include/tcp.h:86:9: warning: converting a packed ‘struct tcphdr’ pointer (alignment 1) to a ‘u16’ {aka ‘short unsigned int’} pointer (alignment 2) may result in an unaligned pointer value [-Waddress-of-packed-member]
+   86 |         u16 cksum = checksum((u16 *)tcp, (int)tcp_len, sum);
+      |         ^~~
+include/tcp.h:16:8: note: defined here
+   16 | struct tcphdr {
+      |        ^~~~~~
+gcc -c -g -Wall -Wno-unused-variable -Wno-unused-function -Iinclude tcp_timer.c -o tcp_timer.o
+In file included from tcp_timer.c:1:
+include/tcp.h: In function ‘tcp_checksum’:
+include/tcp.h:86:9: warning: converting a packed ‘struct tcphdr’ pointer (alignment 1) to a ‘u16’ {aka ‘short unsigned int’} pointer (alignment 2) may result in an unaligned pointer value [-Waddress-of-packed-member]
+   86 |         u16 cksum = checksum((u16 *)tcp, (int)tcp_len, sum);
+      |         ^~~
+include/tcp.h:16:8: note: defined here
+   16 | struct tcphdr {
+      |        ^~~~~~
+gcc -c -g -Wall -Wno-unused-variable -Wno-unused-function -Iinclude arp.c -o arp.o
+gcc -c -g -Wall -Wno-unused-variable -Wno-unused-function -Iinclude arpcache.c -o arpcache.o
+In file included from arpcache.c:4:
+include/icmp.h: In function ‘icmp_checksum’:
+include/icmp.h:49:9: warning: converting a packed ‘struct icmphdr’ pointer (alignment 1) to a ‘u16’ {aka ‘short unsigned int’} pointer (alignment 2) may result in an unaligned pointer value [-Waddress-of-packed-member]
+   49 |         u16 sum = checksum((u16 *)icmp, len, 0);
+      |         ^~~
+include/icmp.h:8:8: note: defined here
+    8 | struct icmphdr {
+      |        ^~~~~~~
+arpcache.c: At top level:
+arpcache.c:61:33: warning: argument 2 of type ‘u8[6]’ {aka ‘unsigned char[6]’} with mismatched bound [-Warray-parameter=]
+   61 | int arpcache_lookup(u32 ip4, u8 mac[ETH_ALEN]){
+      |                              ~~~^~~~~~~~~~~~~
+In file included from arpcache.c:1:
+include/arpcache.h:49:33: note: previously declared as ‘u8[]’ {aka ‘unsigned char[]’}
+   49 | int arpcache_lookup(u32 ip4, u8 mac[]);
+      |                              ~~~^~~~~
+arpcache.c:144:34: warning: argument 2 of type ‘u8[6]’ {aka ‘unsigned char[6]’} with mismatched bound [-Warray-parameter=]
+  144 | void arpcache_insert(u32 ip4, u8 mac[ETH_ALEN]){
+      |                               ~~~^~~~~~~~~~~~~
+include/arpcache.h:50:34: note: previously declared as ‘u8[]’ {aka ‘unsigned char[]’}
+   50 | void arpcache_insert(u32 ip4, u8 mac[]);
+      |                               ~~~^~~~~
+gcc -c -g -Wall -Wno-unused-variable -Wno-unused-function -Iinclude device_internal.c -o device_internal.o
+gcc -c -g -Wall -Wno-unused-variable -Wno-unused-function -Iinclude icmp.c -o icmp.o
+In file included from icmp.c:1:
+include/icmp.h: In function ‘icmp_checksum’:
+include/icmp.h:49:9: warning: converting a packed ‘struct icmphdr’ pointer (alignment 1) to a ‘u16’ {aka ‘short unsigned int’} pointer (alignment 2) may result in an unaligned pointer value [-Waddress-of-packed-member]
+   49 |         u16 sum = checksum((u16 *)icmp, len, 0);
+      |         ^~~
+include/icmp.h:8:8: note: defined here
+    8 | struct icmphdr {
+      |        ^~~~~~~
+gcc -c -g -Wall -Wno-unused-variable -Wno-unused-function -Iinclude ip_base.c -o ip_base.o
+In file included from ip_base.c:2:
+include/icmp.h: In function ‘icmp_checksum’:
+include/icmp.h:49:9: warning: converting a packed ‘struct icmphdr’ pointer (alignment 1) to a ‘u16’ {aka ‘short unsigned int’} pointer (alignment 2) may result in an unaligned pointer value [-Waddress-of-packed-member]
+   49 |         u16 sum = checksum((u16 *)icmp, len, 0);
+      |         ^~~
+include/icmp.h:8:8: note: defined here
+    8 | struct icmphdr {
+      |        ^~~~~~~
+gcc -c -g -Wall -Wno-unused-variable -Wno-unused-function -Iinclude rtable.c -o rtable.o
+gcc -c -g -Wall -Wno-unused-variable -Wno-unused-function -Iinclude rtable_internal.c -o rtable_internal.o
+gcc -L. ip.o main.o tcp.o tcp_apps.o tcp_in.o tcp_out.o tcp_sock.o tcp_timer.o arp.o arpcache.o device_internal.o icmp.o ip_base.o rtable.o rtable_internal.o -o tcp_stack -lpthread 

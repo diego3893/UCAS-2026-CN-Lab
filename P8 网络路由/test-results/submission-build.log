@@ -1,0 +1,102 @@
+make: Entering directory '/mnt/c/Users/30130/Desktop/CN_Lab/P8 网络路由/test-results/submission-build'
+gcc -c -g -Wall -Wno-unused-variable -Wno-unused-function -Iinclude ip.c -o ip.o
+In file included from ip.c:2:
+include/icmp.h: In function ‘icmp_checksum’:
+include/icmp.h:49:9: warning: converting a packed ‘struct icmphdr’ pointer (alignment 1) to a ‘u16’ {aka ‘short unsigned int’} pointer (alignment 2) may result in an unaligned pointer value [-Waddress-of-packed-member]
+   49 |         u16 sum = checksum((u16 *)icmp, len, 0);
+      |         ^~~
+include/icmp.h:8:8: note: defined here
+    8 | struct icmphdr {
+      |        ^~~~~~~
+In file included from ip.c:5:
+include/mospf_proto.h: In function ‘mospf_checksum’:
+include/mospf_proto.h:59:9: warning: converting a packed ‘struct mospf_hdr’ pointer (alignment 1) to a ‘u16’ {aka ‘short unsigned int’} pointer (alignment 2) may result in an unaligned pointer value [-Waddress-of-packed-member]
+   59 |         u16 sum = checksum((u16 *)mospf, ntohs(mospf->len), 0);
+      |         ^~~
+include/mospf_proto.h:22:8: note: defined here
+   22 | struct mospf_hdr {
+      |        ^~~~~~~~~
+gcc -c -g -Wall -Wno-unused-variable -Wno-unused-function -Iinclude main.c -o main.o
+In file included from main.c:6:
+include/icmp.h: In function ‘icmp_checksum’:
+include/icmp.h:49:9: warning: converting a packed ‘struct icmphdr’ pointer (alignment 1) to a ‘u16’ {aka ‘short unsigned int’} pointer (alignment 2) may result in an unaligned pointer value [-Waddress-of-packed-member]
+   49 |         u16 sum = checksum((u16 *)icmp, len, 0);
+      |         ^~~
+include/icmp.h:8:8: note: defined here
+    8 | struct icmphdr {
+      |        ^~~~~~~
+gcc -c -g -Wall -Wno-unused-variable -Wno-unused-function -Iinclude mospf_database.c -o mospf_database.o
+In file included from include/mospf_database.h:7,
+                 from mospf_database.c:1:
+include/mospf_proto.h: In function ‘mospf_checksum’:
+include/mospf_proto.h:59:9: warning: converting a packed ‘struct mospf_hdr’ pointer (alignment 1) to a ‘u16’ {aka ‘short unsigned int’} pointer (alignment 2) may result in an unaligned pointer value [-Waddress-of-packed-member]
+   59 |         u16 sum = checksum((u16 *)mospf, ntohs(mospf->len), 0);
+      |         ^~~
+include/mospf_proto.h:22:8: note: defined here
+   22 | struct mospf_hdr {
+      |        ^~~~~~~~~
+gcc -c -g -Wall -Wno-unused-variable -Wno-unused-function -Iinclude mospf_daemon.c -o mospf_daemon.o
+In file included from mospf_daemon.c:2:
+include/mospf_proto.h: In function ‘mospf_checksum’:
+include/mospf_proto.h:59:9: warning: converting a packed ‘struct mospf_hdr’ pointer (alignment 1) to a ‘u16’ {aka ‘short unsigned int’} pointer (alignment 2) may result in an unaligned pointer value [-Waddress-of-packed-member]
+   59 |         u16 sum = checksum((u16 *)mospf, ntohs(mospf->len), 0);
+      |         ^~~
+include/mospf_proto.h:22:8: note: defined here
+   22 | struct mospf_hdr {
+      |        ^~~~~~~~~
+gcc -c -g -Wall -Wno-unused-variable -Wno-unused-function -Iinclude mospf_proto.c -o mospf_proto.o
+In file included from mospf_proto.c:1:
+include/mospf_proto.h: In function ‘mospf_checksum’:
+include/mospf_proto.h:59:9: warning: converting a packed ‘struct mospf_hdr’ pointer (alignment 1) to a ‘u16’ {aka ‘short unsigned int’} pointer (alignment 2) may result in an unaligned pointer value [-Waddress-of-packed-member]
+   59 |         u16 sum = checksum((u16 *)mospf, ntohs(mospf->len), 0);
+      |         ^~~
+include/mospf_proto.h:22:8: note: defined here
+   22 | struct mospf_hdr {
+      |        ^~~~~~~~~
+gcc -c -g -Wall -Wno-unused-variable -Wno-unused-function -Iinclude arp.c -o arp.o
+gcc -c -g -Wall -Wno-unused-variable -Wno-unused-function -Iinclude arpcache.c -o arpcache.o
+In file included from arpcache.c:4:
+include/icmp.h: In function ‘icmp_checksum’:
+include/icmp.h:49:9: warning: converting a packed ‘struct icmphdr’ pointer (alignment 1) to a ‘u16’ {aka ‘short unsigned int’} pointer (alignment 2) may result in an unaligned pointer value [-Waddress-of-packed-member]
+   49 |         u16 sum = checksum((u16 *)icmp, len, 0);
+      |         ^~~
+include/icmp.h:8:8: note: defined here
+    8 | struct icmphdr {
+      |        ^~~~~~~
+arpcache.c: At top level:
+arpcache.c:61:33: warning: argument 2 of type ‘u8[6]’ {aka ‘unsigned char[6]’} with mismatched bound [-Warray-parameter=]
+   61 | int arpcache_lookup(u32 ip4, u8 mac[ETH_ALEN]){
+      |                              ~~~^~~~~~~~~~~~~
+In file included from arpcache.c:1:
+include/arpcache.h:50:33: note: previously declared as ‘u8[]’ {aka ‘unsigned char[]’}
+   50 | int arpcache_lookup(u32 ip4, u8 mac[]);
+      |                              ~~~^~~~~
+arpcache.c:144:34: warning: argument 2 of type ‘u8[6]’ {aka ‘unsigned char[6]’} with mismatched bound [-Warray-parameter=]
+  144 | void arpcache_insert(u32 ip4, u8 mac[ETH_ALEN]){
+      |                               ~~~^~~~~~~~~~~~~
+include/arpcache.h:51:34: note: previously declared as ‘u8[]’ {aka ‘unsigned char[]’}
+   51 | void arpcache_insert(u32 ip4, u8 mac[]);
+      |                               ~~~^~~~~
+gcc -c -g -Wall -Wno-unused-variable -Wno-unused-function -Iinclude device_internal.c -o device_internal.o
+gcc -c -g -Wall -Wno-unused-variable -Wno-unused-function -Iinclude icmp.c -o icmp.o
+In file included from icmp.c:1:
+include/icmp.h: In function ‘icmp_checksum’:
+include/icmp.h:49:9: warning: converting a packed ‘struct icmphdr’ pointer (alignment 1) to a ‘u16’ {aka ‘short unsigned int’} pointer (alignment 2) may result in an unaligned pointer value [-Waddress-of-packed-member]
+   49 |         u16 sum = checksum((u16 *)icmp, len, 0);
+      |         ^~~
+include/icmp.h:8:8: note: defined here
+    8 | struct icmphdr {
+      |        ^~~~~~~
+gcc -c -g -Wall -Wno-unused-variable -Wno-unused-function -Iinclude ip_base.c -o ip_base.o
+In file included from ip_base.c:2:
+include/icmp.h: In function ‘icmp_checksum’:
+include/icmp.h:49:9: warning: converting a packed ‘struct icmphdr’ pointer (alignment 1) to a ‘u16’ {aka ‘short unsigned int’} pointer (alignment 2) may result in an unaligned pointer value [-Waddress-of-packed-member]
+   49 |         u16 sum = checksum((u16 *)icmp, len, 0);
+      |         ^~~
+include/icmp.h:8:8: note: defined here
+    8 | struct icmphdr {
+      |        ^~~~~~~
+gcc -c -g -Wall -Wno-unused-variable -Wno-unused-function -Iinclude rtable.c -o rtable.o
+gcc -c -g -Wall -Wno-unused-variable -Wno-unused-function -Iinclude rtable_internal.c -o rtable_internal.o
+gcc -L. ip.o main.o mospf_database.o mospf_daemon.o mospf_proto.o arp.o arpcache.o device_internal.o icmp.o ip_base.o rtable.o rtable_internal.o -o mospfd -lpthread 
+make: Leaving directory '/mnt/c/Users/30130/Desktop/CN_Lab/P8 网络路由/test-results/submission-build'

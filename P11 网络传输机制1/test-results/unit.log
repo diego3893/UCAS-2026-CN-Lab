@@ -1,0 +1,18 @@
+DEBUG: 0.0.0.0:0 switch state, from FIN_WAIT_1 to FIN_WAIT_2.
+DEBUG: 0.0.0.0:0 switch state, from FIN_WAIT_2 to TIME_WAIT.
+DEBUG: 0.0.0.0:0 switch state, from TIME_WAIT to CLOSED.
+DEBUG: 0.0.0.0:0 switch state, from CLOSED to CLOSED.
+DEBUG: 0.0.0.0:0 switch state, from FIN_WAIT_1 to CLOSING.
+DEBUG: 0.0.0.0:0 switch state, from CLOSING to TIME_WAIT.
+DEBUG: 0.0.0.0:0 switch state, from TIME_WAIT to CLOSED.
+DEBUG: 0.0.0.0:0 switch state, from CLOSED to CLOSED.
+DEBUG: 0.0.0.0:0 switch state, from ESTABLISHED to CLOSED.
+DEBUG: 0.0.0.0:0 switch state, from CLOSED to CLOSED.
+DEBUG: 0.0.0.0:10001 switch state, from CLOSED to LISTEN.
+DEBUG: 10.0.0.1:10001 switch state, from CLOSED to SYN_RECV.
+DEBUG: 10.0.0.1:10001 switch state, from SYN_RECV to CLOSED.
+DEBUG: 0.0.0.0:10001 switch state, from LISTEN to CLOSED.
+PASS combined FIN|ACK, duplicate FIN, 2MSL scan and reference release
+PASS simultaneous close
+PASS RST close and sequence wraparound comparison
+PASS listener closes pending child without dangling references

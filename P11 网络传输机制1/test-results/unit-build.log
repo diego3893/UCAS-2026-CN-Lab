@@ -1,0 +1,9 @@
+In file included from tests/../tcp_stack/tcp_sock.c:2,
+                 from tests/state_unit.c:4:
+tcp_stack/include/tcp.h: In function ‘tcp_checksum’:
+tcp_stack/include/tcp.h:86:9: warning: converting a packed ‘struct tcphdr’ pointer (alignment 1) to a ‘u16’ {aka ‘short unsigned int’} pointer (alignment 2) may result in an unaligned pointer value [-Waddress-of-packed-member]
+   86 |         u16 cksum = checksum((u16 *)tcp, (int)tcp_len, sum);
+      |         ^~~
+tcp_stack/include/tcp.h:16:8: note: defined here
+   16 | struct tcphdr {
+      |        ^~~~~~

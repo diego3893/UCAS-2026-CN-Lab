@@ -1,0 +1,66 @@
+[
+  {
+    "name": "initial_database_r1",
+    "passed": true
+  },
+  {
+    "name": "initial_database_r2",
+    "passed": true
+  },
+  {
+    "name": "initial_database_r3",
+    "passed": true
+  },
+  {
+    "name": "initial_database_r4",
+    "passed": true
+  },
+  {
+    "name": "initial_ping_h1",
+    "passed": true
+  },
+  {
+    "name": "initial_ping_h2",
+    "passed": true
+  },
+  {
+    "name": "initial_trace",
+    "passed": true
+  },
+  {
+    "name": "after-down_database_r1",
+    "passed": true
+  },
+  {
+    "name": "after-down_database_r2",
+    "passed": true
+  },
+  {
+    "name": "after-down_database_r3",
+    "passed": true
+  },
+  {
+    "name": "after-down_database_r4",
+    "passed": true
+  },
+  {
+    "name": "after_down_ping_h1",
+    "passed": true
+  },
+  {
+    "name": "after_down_ping_h2",
+    "passed": true
+  },
+  {
+    "name": "alternate_path",
+    "passed": true
+  },
+  {
+    "name": "router_stdout_empty",
+    "passed": true
+  },
+  {
+    "name": "processes_alive",
+    "passed": true
+  }
+]
